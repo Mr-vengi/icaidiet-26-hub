@@ -1,0 +1,285 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — ICAIDIET'26 conference
+ * Theme: light blue & white, academic + futuristic
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-navy: var(--navy);
+  --color-sky: var(--sky);
+  --color-ice: var(--ice);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+:root {
+  --radius: 0.75rem;
+  --font-display: "Archivo", sans-serif;
+  --font-body: "Public Sans", sans-serif;
+
+  --background: oklch(0.99 0.004 240);
+  --foreground: oklch(0.24 0.06 255);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.24 0.06 255);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.24 0.06 255);
+  --primary: oklch(0.52 0.16 250);
+  --primary-foreground: oklch(0.98 0.01 240);
+  --secondary: oklch(0.95 0.025 235);
+  --secondary-foreground: oklch(0.35 0.1 255);
+  --muted: oklch(0.96 0.015 240);
+  --muted-foreground: oklch(0.5 0.05 255);
+  --accent: oklch(0.92 0.05 230);
+  --accent-foreground: oklch(0.35 0.12 255);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0.01 240);
+  --border: oklch(0.9 0.02 240);
+  --input: oklch(0.9 0.02 240);
+  --ring: oklch(0.6 0.14 250);
+
+  --navy: oklch(0.3 0.09 260);
+  --sky: oklch(0.75 0.1 230);
+  --ice: oklch(0.96 0.02 230);
+  --gold: oklch(0.82 0.15 85);
+  --gold-foreground: oklch(0.3 0.08 80);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility hero-grid-bg {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--primary) 7%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--primary) 7%, transparent) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+@utility gradient-heading {
+  background: linear-gradient(120deg, var(--navy) 20%, var(--primary) 70%, var(--sky) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility card-glow {
+  box-shadow:
+    0 1px 2px color-mix(in oklab, var(--primary) 6%, transparent),
+    0 12px 40px -12px color-mix(in oklab, var(--primary) 18%, transparent);
+}
+
+@utility animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@utility reveal-section {
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+.reveal-section.is-visible {
+  animation: reveal-section 0.7s cubic-bezier(0, 0, 0, 1) forwards;
+}
+
+@keyframes reveal-section {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility reveal-item {
+  opacity: 0;
+  transform: translateY(26px) scale(0.98);
+}
+
+.reveal-item.is-visible {
+  animation: reveal-item 0.6s cubic-bezier(0, 0, 0, 1) forwards;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+@keyframes reveal-item {
+  from {
+    opacity: 0;
+    transform: translateY(26px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes menu-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-menu-drop {
+  animation: menu-drop 0.2s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-section,
+  .reveal-section.is-visible,
+  .reveal-item,
+  .reveal-item.is-visible,
+  .animate-menu-drop {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Form animations and transitions */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  @apply transition-all duration-200;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+  @apply border-primary shadow-md;
+}
+
+/* Button animations */
+button[type="submit"] {
+  @apply transition-all duration-200;
+}
+
+button[type="submit"]:not(:disabled):hover {
+  @apply -translate-y-0.5 shadow-lg;
+}
+
+button[type="submit"]:disabled {
+  @apply cursor-not-allowed;
+}
+
+/* Form status messages */
+@keyframes slide-in-fade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bg-green-50,
+.bg-red-50 {
+  animation: slide-in-fade 0.3s ease-out;
+}
+
+/* Input label animations */
+label {
+  @apply transition-colors duration-200;
+}
+
+/* Card hover effects */
+.card-glow {
+  @apply transition-all duration-300;
+}
+
+.card-glow:hover {
+  @apply shadow-lg;
+}
+
+/* Smooth form transitions */
+form {
+  @apply space-y-4;
+}
+
+form > div {
+  @apply opacity-0 animate-fade-in;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+}
