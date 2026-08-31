@@ -90,25 +90,25 @@ const COMMITTEE = [
   {
     role: "Chief Patrons",
     members: [
-      { name: "Dr. Deyva Thiru Dr. S.N. Subramanian", detail: "Founder Chairman, SNS Group" },
-      { name: "Dr. S. Rajalakshmi", detail: "Correspondent, SNS Group" },
-      { name: "Dr. Nalin, SNS", detail: "Secretary / Trustee, SNS Group" },
+      { name: "Dr. Deyva Thiru Dr. S.N. Subramanian", detail: "Founder Chairman, XXXX Group" },
+      { name: "Dr. S. Rajalakshmi", detail: "Correspondent, XXXX Group" },
+      { name: "Dr. Nalin, XXXX", detail: "Secretary / Trustee, XXXX Group" },
     ],
   },
   {
     role: "Patrons",
     members: [
-      { name: "Dr. V.P. Arunachalam", detail: "Director, SNS Technical Institutions" },
-      { name: "Dr. S. Chenthur Pandian", detail: "Executive Director, SNS Technical Campus" },
-      { name: "Dr. S. Charles", detail: "Principal, SNS College of Technology" },
-      { name: "Dr. P. Tamilselvam", detail: "VP – Admin, SNS College of Technology" },
-      { name: "Dr. P. Vivekanandan", detail: "VR – Academics, SNS College of Technology" },
+      { name: "Dr. V.P. Arunachalam", detail: "Director, XXXX Technical Institutions" },
+      { name: "Dr. S. Chenthur Pandian", detail: "Executive Director, XXXX Technical Campus" },
+      { name: "Dr. S. Charles", detail: "Principal, XXXX College of Technology" },
+      { name: "Dr. P. Tamilselvam", detail: "VP – Admin, XXXX College of Technology" },
+      { name: "Dr. P. Vivekanandan", detail: "VR – Academics, XXXX College of Technology" },
     ],
   },
   {
     role: "Convenors",
     members: [
-      { name: "Dr. R. Sudhakaran", detail: "Vice Principal, SNS College of Technology – AI Campus" },
+      { name: "Dr. R. Sudhakaran", detail: "Vice Principal, XXXX College of Technology – AI Campus" },
       { name: "Dr. M. Sudha", detail: "HoD, IV CSE – CT" },
     ],
   },
