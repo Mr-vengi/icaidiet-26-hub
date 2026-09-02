@@ -90,26 +90,26 @@ const COMMITTEE = [
   {
     role: "Chief Patrons",
     members: [
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Founder Chairman, XXXX College" },
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Correspondent, XXXX College" },
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Secretary / Trustee, XXXX College" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position" },
     ],
   },
   {
     role: "Patrons",
     members: [
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Director, XXXX College" },
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Executive Director, XXXX College" },
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Principal, XXXX College" },
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "VP – Admin, XXXX College" },
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "VR – Academics, XXXX College" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position" },
     ],
   },
   {
     role: "Convenors",
     members: [
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Vice Principal, XXXX College" },
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "HoD, XXXX College" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position" },
     ],
   },
 ];
