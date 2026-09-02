@@ -90,26 +90,26 @@ const COMMITTEE = [
   {
     role: "Chief Patrons",
     members: [
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position" },
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position" },
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position, XXXX College" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position, XXXX College" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position, XXXX College" },
     ],
   },
   {
     role: "Patrons",
     members: [
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position" },
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position" },
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position" },
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position" },
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position, XXXX College" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position, XXXX College" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position, XXXX College" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position, XXXX College" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position, XXXX College" },
     ],
   },
   {
     role: "Convenors",
     members: [
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position" },
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position, XXXX College" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position, XXXX College" },
     ],
   },
 ];
