@@ -90,26 +90,26 @@ const COMMITTEE = [
   {
     role: "Chief Patrons",
     members: [
-      { name: "Dr. XXX - XXX - XXX", detail: "Founder Chairman, XXXX Group" },
-      { name: "Dr. XXX - XXX - XXX", detail: "Correspondent, XXXX Group" },
-      { name: "Dr. XXX - XXX - XXX", detail: "Secretary / Trustee, XXXX Group" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Founder Chairman, XXXX College" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Correspondent, XXXX College" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Secretary / Trustee, XXXX College" },
     ],
   },
   {
     role: "Patrons",
     members: [
-      { name: "Dr. XXX - XXX - XXX", detail: "Director, XXXX Technical Institutions" },
-      { name: "Dr. XXX - XXX - XXX", detail: "Executive Director, XXXX Technical Campus" },
-      { name: "Dr. XXX - XXX - XXX", detail: "Principal, XXXX College of Technology" },
-      { name: "Dr. XXX - XXX - XXX", detail: "VP – Admin, XXXX College of Technology" },
-      { name: "Dr. XXX - XXX - XXX", detail: "VR – Academics, XXXX College of Technology" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Director, XXXX College" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Executive Director, XXXX College" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Principal, XXXX College" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "VP – Admin, XXXX College" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "VR – Academics, XXXX College" },
     ],
   },
   {
     role: "Convenors",
     members: [
-      { name: "Dr. XXX - XXX - XXX", detail: "Vice Principal, XXXX College of Technology – AI Campus" },
-      { name: "Dr. XXX - XXX - XXX", detail: "HoD, IV CSE – CT" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "Vice Principal, XXXX College" },
+      { name: "Dr. XXXX-XXXX-XXXX", detail: "HoD, XXXX College" },
     ],
   },
 ];
@@ -580,17 +580,17 @@ function Contact() {
               Questions about submissions, registration, or the conference program? Our team is happy to help.
             </p>
             <div className="mt-8 space-y-4">
-              <a href="tel:+918903444955" className="flex items-center gap-3 text-navy transition-colors hover:text-primary">
+              <a href="tel:+919442226737" className="flex items-center gap-3 text-navy transition-colors hover:text-primary">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
                   <Phone className="h-4.5 w-4.5" />
                 </span>
-                <span className="font-semibold">+91 89034 44955 / +91 76039 23049</span>
+                <span className="font-semibold">+91 94422 26737</span>
               </a>
-              <a href="mailto:icaidiet26@gmail.com" className="flex items-center gap-3 text-navy transition-colors hover:text-primary">
+              <a href="mailto:info@mec.edu.in" className="flex items-center gap-3 text-navy transition-colors hover:text-primary">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
                   <Mail className="h-4.5 w-4.5" />
                 </span>
-                <span className="font-semibold">icaidiet26@gmail.com</span>
+                <span className="font-semibold">info@mec.edu.in</span>
               </a>
               <div className="flex items-start gap-3 text-navy">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
