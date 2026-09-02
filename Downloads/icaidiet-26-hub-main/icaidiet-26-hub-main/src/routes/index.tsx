@@ -90,26 +90,26 @@ const COMMITTEE = [
   {
     role: "Chief Patrons",
     members: [
-      { name: "Dr. Deyva Thiru Dr. S.N. Subramanian", detail: "Founder Chairman, XXXX Group" },
-      { name: "Dr. S. Rajalakshmi", detail: "Correspondent, XXXX Group" },
-      { name: "Dr. Nalin, XXXX", detail: "Secretary / Trustee, XXXX Group" },
+      { name: "Dr. XXX - XXX - XXX", detail: "Founder Chairman, XXXX Group" },
+      { name: "Dr. XXX - XXX - XXX", detail: "Correspondent, XXXX Group" },
+      { name: "Dr. XXX - XXX - XXX", detail: "Secretary / Trustee, XXXX Group" },
     ],
   },
   {
     role: "Patrons",
     members: [
-      { name: "Dr. V.P. Arunachalam", detail: "Director, XXXX Technical Institutions" },
-      { name: "Dr. S. Chenthur Pandian", detail: "Executive Director, XXXX Technical Campus" },
-      { name: "Dr. S. Charles", detail: "Principal, XXXX College of Technology" },
-      { name: "Dr. P. Tamilselvam", detail: "VP – Admin, XXXX College of Technology" },
-      { name: "Dr. P. Vivekanandan", detail: "VR – Academics, XXXX College of Technology" },
+      { name: "Dr. XXX - XXX - XXX", detail: "Director, XXXX Technical Institutions" },
+      { name: "Dr. XXX - XXX - XXX", detail: "Executive Director, XXXX Technical Campus" },
+      { name: "Dr. XXX - XXX - XXX", detail: "Principal, XXXX College of Technology" },
+      { name: "Dr. XXX - XXX - XXX", detail: "VP – Admin, XXXX College of Technology" },
+      { name: "Dr. XXX - XXX - XXX", detail: "VR – Academics, XXXX College of Technology" },
     ],
   },
   {
     role: "Convenors",
     members: [
-      { name: "Dr. R. Sudhakaran", detail: "Vice Principal, XXXX College of Technology – AI Campus" },
-      { name: "Dr. M. Sudha", detail: "HoD, IV CSE – CT" },
+      { name: "Dr. XXX - XXX - XXX", detail: "Vice Principal, XXXX College of Technology – AI Campus" },
+      { name: "Dr. XXX - XXX - XXX", detail: "HoD, IV CSE – CT" },
     ],
   },
 ];
