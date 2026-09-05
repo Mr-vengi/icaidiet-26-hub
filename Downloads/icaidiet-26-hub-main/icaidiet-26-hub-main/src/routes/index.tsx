@@ -42,7 +42,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "International conference by Muthayammal Engineering College & Yorkville University, Canada. Conference dates: 20th & 21st November 2026. Scopus-indexed proceedings.",
+          "International conference by Department of CSE, Muthayammal Engineering College in association with Yorkville University, Canada. Tentative date: 18th December 2026. Published Partner: Wiley.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -83,42 +83,41 @@ const DATES = [
   { label: "Early Bird Registration", date: "22nd October 2026" },
   { label: "Late Registration", date: "23rd – 28th October 2026" },
   { label: "Final Manuscript Notification", date: "2nd November 2026" },
-  { label: "Conference Dates", date: "20th & 21st November 2026", highlight: true },
+  { label: "Tentative Conference Date", date: "18th December 2026", highlight: true },
 ];
 
 const COMMITTEE = [
   {
     role: "Chief Patrons",
     members: [
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Founder, XXXX College" },
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Principal, XXXX College" },
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Secretary, XXXX College" },
+      { name: "Deiva Thiru R. Kandasamy", detail: "Founder Chairman, Muthayammal Educational Trust And Research Foundation" },
+      { name: "Dr. K. Gunasekaran, M.E., Ph.D., FIE", detail: "Secretary & Managing Trustee, Muthayammal Educational Trust And Research Foundation" },
+      { name: "Er. G. Raghul, M.E.", detail: "Joint Secretary, Muthayammal Educational Trust And Research Foundation" },
     ],
   },
   {
     role: "Patrons",
     members: [
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position, XXXX College" },
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position, XXXX College" },
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position, XXXX College" },
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position, XXXX College" },
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position, XXXX College" },
+      { name: "Dr. P. Senthilkumar, M.E., Ph.D.(IITM)", detail: "Principal, Muthayammal Engineering College" },
+      { name: "Dr. P. Venugopal", detail: "Dean - Academics, Muthayammal Engineering College" },
+      { name: "Dr. G. Sudarmozhi, M.Sc., Ph.D", detail: "Dean - Student Affairs, Muthayammal Engineering College" },
+      { name: "Dr. P. Suresh, M.E., Ph.D", detail: "Dean - Research, Muthayammal Engineering College" },
+      { name: "Dr. S. Saravanan, M.E., Ph.D., FIE", detail: "Dean - Product and Consultancy, Muthayammal Engineering College" },
     ],
   },
   {
-    role: "Convenors",
+    role: "Convenor",
     members: [
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position, XXXX College" },
-      { name: "Dr. XXXX-XXXX-XXXX", detail: "Position, XXXX College" },
+      { name: "Dr. G. Kavitha, M.S(By Research), Ph.D., FIE", detail: "Professor and Head, CSE, Muthayammal Engineering College" },
     ],
   },
 ];
 
 const FEES = [
-  { category: "Author — Conference Only (Indian)", early: "₹ 2,000", late: "₹ 2,500" },
-  { category: "Author — With Scopus-Indexed Proceedings (Indian)", early: "₹ 10,000", late: "₹ 11,000" },
-  { category: "Author — Conference with Proceedings (Foreign)", early: "$ 400", late: "$ 500" },
-  { category: "Industry Delegates — Conference with Proceedings", early: "₹ 12,000", late: "₹ 13,000" },
+  { category: "Registration Fee — UG Students", early: "₹ 1,000", late: "₹ 1,000" },
+  { category: "Registration Fee — PG Students", early: "₹ 1,250", late: "₹ 1,250" },
+  { category: "Publication Cost — UG Students", early: "₹ 10,450", late: "₹ 10,450" },
+  { category: "Publication Cost — PG Students", early: "₹ 13,500", late: "₹ 13,500" },
 ];
 
 function Header() {
