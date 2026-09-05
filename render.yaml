@@ -3,6 +3,7 @@ services:
     name: icaidiet-26-hub
     runtime: node
     plan: free
+    rootDir: Downloads/icaidiet-26-hub-main/icaidiet-26-hub-main
     buildCommand: npm ci && NITRO_PRESET=node-server npm run build
     startCommand: node .output/server/index.mjs
     envVars:
