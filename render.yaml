@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: icaidiet-26-hub
+    name: icaidiet-26-mec
     runtime: node
     plan: free
     rootDir: Downloads/icaidiet-26-hub-main/icaidiet-26-hub-main
