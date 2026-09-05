@@ -246,7 +246,7 @@ function Hero() {
           </div>
           <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm text-muted-foreground">
             <span className="inline-flex items-center gap-2">
-              <CalendarDays className="h-4 w-4 text-primary" /> 20th &amp; 21st November 2026
+              <CalendarDays className="h-4 w-4 text-primary" /> Tentative Date: 18th December 2026
             </span>
             <span className="inline-flex items-center gap-2">
               <Globe className="h-4 w-4 text-primary" /> Hybrid Mode (Online)
