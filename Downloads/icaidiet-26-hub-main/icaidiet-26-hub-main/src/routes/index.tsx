@@ -27,6 +27,7 @@ import {
 } from "lucide-react";
 import { useEffect, useState, type CSSProperties } from "react";
 import heroRobot from "@/assets/hero-robot.png";
+import brochure from "@/assets/brochure.png";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/")({
@@ -61,7 +62,7 @@ const NAV_LINKS = [
 ];
 
 const RESOURCE_LINKS = [
-  { label: "Brochure", href: "/brochure.png", external: false },
+  { label: "Brochure", href: brochure, external: false },
   { label: "MEC", href: "https://mec.edu.in/", external: true },
 ];
 // Both open in a new tab (same behavior as the official site).
@@ -286,7 +287,11 @@ function Hero() {
 function Highlights() {
   const items = [
     { icon: BookOpenCheck, title: "Scopus-Indexed", text: "All accepted & presented papers published as Scopus-indexed conference proceedings" },
-    { icon: BadgeCheck, title: "ISBN & DOI", text: "Assigned ISBN and DOI for all proceedings, as per publisher norms" },
+    {
+      icon: BadgeCheck,
+      title: "ISBN & DOI",
+      text: "Print ISBN: 9781836690467 | Online ISBN: 9781394423415",
+    },
     { icon: FileText, title: "Publish Partner", text: "Wiley — official publishing partner of ICAIDIET'26" },
     { icon: GraduationCap, title: "Anna University Affiliated", text: "AICTE-approved autonomous institution, Estd. 2000" },
   ];
