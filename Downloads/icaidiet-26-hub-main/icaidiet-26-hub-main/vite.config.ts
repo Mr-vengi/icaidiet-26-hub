@@ -13,7 +13,7 @@ export default defineConfig({
 
   vite: {
     server: {
-      allowedHosts: ["icaidiet-26-mec.onrender.com"],
+      allowedHosts: ["icaidiet-26-hub.onrender.com"],
     },
   },
 });

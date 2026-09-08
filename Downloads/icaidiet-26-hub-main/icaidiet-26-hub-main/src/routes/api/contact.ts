@@ -94,7 +94,7 @@ export const Route = createFileRoute('/api/contact')({
         } catch (error) {
           console.error('Contact form error:', error);
           return Response.json(
-            { success: false, statusMessage: 'Please directly contact with icaidiet26@gmail.com' },
+            { success: false, statusMessage: 'Please directly contact with icaidietmec@gmail.com' },
             { status: 500 },
           );
         }

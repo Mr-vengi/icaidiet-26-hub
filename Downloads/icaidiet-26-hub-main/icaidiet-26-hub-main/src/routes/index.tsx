@@ -147,8 +147,14 @@ function Header() {
             <a
               key={l.label}
               href={l.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              target={l.external ? "_blank" : undefined}
+              rel={l.external ? "noopener noreferrer" : undefined}
+              onClick={(event) => {
+                if (l.label === "Brochure") {
+                  event.preventDefault();
+                  window.open(l.href, "_blank", "noopener,noreferrer");
+                }
+              }}
               className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
             >
               {l.label}
@@ -186,9 +192,15 @@ function Header() {
             <a
               key={l.label}
               href={l.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setOpen(false)}
+              target={l.external ? "_blank" : undefined}
+              rel={l.external ? "noopener noreferrer" : undefined}
+              onClick={(event) => {
+                setOpen(false);
+                if (l.label === "Brochure") {
+                  event.preventDefault();
+                  window.open(l.href, "_blank", "noopener,noreferrer");
+                }
+              }}
               className="flex items-center justify-between border-b border-border py-3 text-sm font-medium text-foreground"
             >
               {l.label}
@@ -547,7 +559,7 @@ function Contact() {
       } else {
         setSubmitStatus({
           type: "error",
-          message: data.statusMessage || "Please directly contact with icaidiet26@gmail.com ",
+          message: data.statusMessage || "Please directly contact with icaidietmec@gmail.com",
         });
         toast.error("Failed to Send", {
           description: data.statusMessage || "Something went wrong.",
@@ -579,17 +591,17 @@ function Contact() {
               Questions about submissions, registration, or the conference program? Our team is happy to help.
             </p>
             <div className="mt-8 space-y-4">
-              <a href="tel:+919442226737" className="flex items-center gap-3 text-navy transition-colors hover:text-primary">
+              <a href="tel:+919842073527" className="flex items-center gap-3 text-navy transition-colors hover:text-primary">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
                   <Phone className="h-4.5 w-4.5" />
                 </span>
-                <span className="font-semibold">+91 94422 26737</span>
+                <span className="font-semibold">+91 9842073527</span>
               </a>
-              <a href="mailto:info@mec.edu.in" className="flex items-center gap-3 text-navy transition-colors hover:text-primary">
+              <a href="mailto:icaidietmec@gmail.com" className="flex items-center gap-3 text-navy transition-colors hover:text-primary">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
                   <Mail className="h-4.5 w-4.5" />
                 </span>
-                <span className="font-semibold">info@mec.edu.in</span>
+                <span className="font-semibold">icaidietmec@gmail.com</span>
               </a>
               <div className="flex items-start gap-3 text-navy">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
