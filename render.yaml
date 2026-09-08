@@ -1,11 +1,11 @@
 services:
   - type: web
-    name: icaidiet-26-mec
+    name: icaidiet-26-hub
     runtime: node
     plan: free
     rootDir: Downloads/icaidiet-26-hub-main/icaidiet-26-hub-main
     buildCommand: npm ci && NITRO_PRESET=node-server npm run build
-    startCommand: node .output/server/index.mjs
+    startCommand: npm run preview -- --host 0.0.0.0 --port $PORT
     envVars:
       - key: NODE_VERSION
         value: "22"

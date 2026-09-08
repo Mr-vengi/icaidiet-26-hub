@@ -12,4 +12,7 @@ export default defineConfig({
   server: {
     allowedHosts: ['icaidiet-26-hub.onrender.com'],
   },
+  preview: {
+    allowedHosts: ['icaidiet-26-hub-4.onrender.com'],
+  },
 })
