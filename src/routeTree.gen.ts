@@ -10,6 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as BrochureRouteImport } from './routes/brochure'
+import { Route as CallForPapersRouteImport } from './routes/call-for-papers'
+import { Route as CommitteesRouteImport } from './routes/committees'
+import { Route as GuidelinesRouteImport } from './routes/guidelines'
 import { Route as RegisterRouteImport } from './routes/register'
 import { Route as ApiContactRouteImport } from './routes/api/contact'
 import { Route as ApiRegisterRouteImport } from './routes/api/register'
@@ -17,6 +22,31 @@ import { Route as ApiRegisterRouteImport } from './routes/api/register'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrochureRoute = BrochureRouteImport.update({
+  id: '/brochure',
+  path: '/brochure',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CallForPapersRoute = CallForPapersRouteImport.update({
+  id: '/call-for-papers',
+  path: '/call-for-papers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommitteesRoute = CommitteesRouteImport.update({
+  id: '/committees',
+  path: '/committees',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuidelinesRoute = GuidelinesRouteImport.update({
+  id: '/guidelines',
+  path: '/guidelines',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RegisterRoute = RegisterRouteImport.update({
@@ -37,12 +67,22 @@ const ApiRegisterRoute = ApiRegisterRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/brochure': typeof BrochureRoute
+  '/call-for-papers': typeof CallForPapersRoute
+  '/committees': typeof CommitteesRoute
+  '/guidelines': typeof GuidelinesRoute
   '/register': typeof RegisterRoute
   '/api/contact': typeof ApiContactRoute
   '/api/register': typeof ApiRegisterRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/brochure': typeof BrochureRoute
+  '/call-for-papers': typeof CallForPapersRoute
+  '/committees': typeof CommitteesRoute
+  '/guidelines': typeof GuidelinesRoute
   '/register': typeof RegisterRoute
   '/api/contact': typeof ApiContactRoute
   '/api/register': typeof ApiRegisterRoute
@@ -50,20 +90,58 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/brochure': typeof BrochureRoute
+  '/call-for-papers': typeof CallForPapersRoute
+  '/committees': typeof CommitteesRoute
+  '/guidelines': typeof GuidelinesRoute
   '/register': typeof RegisterRoute
   '/api/contact': typeof ApiContactRoute
   '/api/register': typeof ApiRegisterRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/register' | '/api/contact' | '/api/register'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/brochure'
+    | '/call-for-papers'
+    | '/committees'
+    | '/guidelines'
+    | '/register'
+    | '/api/contact'
+    | '/api/register'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/register' | '/api/contact' | '/api/register'
-  id: '__root__' | '/' | '/register' | '/api/contact' | '/api/register'
+  to:
+    | '/'
+    | '/about'
+    | '/brochure'
+    | '/call-for-papers'
+    | '/committees'
+    | '/guidelines'
+    | '/register'
+    | '/api/contact'
+    | '/api/register'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/brochure'
+    | '/call-for-papers'
+    | '/committees'
+    | '/guidelines'
+    | '/register'
+    | '/api/contact'
+    | '/api/register'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BrochureRoute: typeof BrochureRoute
+  CallForPapersRoute: typeof CallForPapersRoute
+  CommitteesRoute: typeof CommitteesRoute
+  GuidelinesRoute: typeof GuidelinesRoute
   RegisterRoute: typeof RegisterRoute
   ApiContactRoute: typeof ApiContactRoute
   ApiRegisterRoute: typeof ApiRegisterRoute
@@ -76,6 +154,41 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/brochure': {
+      id: '/brochure'
+      path: '/brochure'
+      fullPath: '/brochure'
+      preLoaderRoute: typeof BrochureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/call-for-papers': {
+      id: '/call-for-papers'
+      path: '/call-for-papers'
+      fullPath: '/call-for-papers'
+      preLoaderRoute: typeof CallForPapersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/committees': {
+      id: '/committees'
+      path: '/committees'
+      fullPath: '/committees'
+      preLoaderRoute: typeof CommitteesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guidelines': {
+      id: '/guidelines'
+      path: '/guidelines'
+      fullPath: '/guidelines'
+      preLoaderRoute: typeof GuidelinesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/register': {
@@ -104,6 +217,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BrochureRoute: BrochureRoute,
+  CallForPapersRoute: CallForPapersRoute,
+  CommitteesRoute: CommitteesRoute,
+  GuidelinesRoute: GuidelinesRoute,
   RegisterRoute: RegisterRoute,
   ApiContactRoute: ApiContactRoute,
   ApiRegisterRoute: ApiRegisterRoute,

@@ -43,12 +43,14 @@
   --color-gold-foreground: var(--gold-foreground);
   --font-display: var(--font-display);
   --font-body: var(--font-body);
+  --font-serif: var(--font-serif);
 }
 
 :root {
   --radius: 0.75rem;
   --font-display: "Archivo", sans-serif;
   --font-body: "Public Sans", sans-serif;
+  --font-serif: "Libre Baskerville", "Playfair Display", "Times New Roman", serif;
 
   --background: oklch(0.99 0.004 240);
   --foreground: oklch(0.24 0.06 255);
@@ -98,10 +100,15 @@
 }
 
 @utility hero-grid-bg {
-  background-image:
-    linear-gradient(to right, color-mix(in oklab, var(--primary) 7%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklab, var(--primary) 7%, transparent) 1px, transparent 1px);
-  background-size: 44px 44px;
+  background-color: #ffffff;
+}
+
+@utility warm-grid-bg {
+  background-color: #ffffff;
+}
+
+@utility blue-grid-bg {
+  background-color: #ffffff;
 }
 
 @utility gradient-heading {
@@ -122,10 +129,12 @@
 }
 
 @keyframes float-slow {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-14px);
   }
@@ -145,6 +154,7 @@
     opacity: 0;
     transform: translateY(22px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -166,6 +176,7 @@
     opacity: 0;
     transform: translateY(26px) scale(0.98);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -177,6 +188,7 @@
     opacity: 0;
     transform: translateY(-8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -188,6 +200,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .reveal-section,
   .reveal-section.is-visible,
   .reveal-item,
@@ -235,6 +248,7 @@ button[type="submit"]:disabled {
     opacity: 0;
     transform: translateY(-8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -265,7 +279,7 @@ form {
   @apply space-y-4;
 }
 
-form > div {
+form>div {
   @apply opacity-0 animate-fade-in;
 }
 
@@ -274,6 +288,7 @@ form > div {
     opacity: 0;
     transform: translateY(4px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

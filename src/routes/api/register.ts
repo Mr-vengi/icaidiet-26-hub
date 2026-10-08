@@ -68,8 +68,8 @@ export const Route = createFileRoute('/api/register')({
 
               <p>For any queries, please contact us:</p>
               <ul>
-                <li>Email: icaidiet26@gmail.com</li>
-                <li>Phone: +91 89034 44955 / +91 76039 23049</li>
+                <li>Email: icaidietmec@gmail.com</li>
+                <li>Phone: +91 9842073527</li>
               </ul>
 
               <p>Best regards,<br>ICAIDIET'26 Team</p>
@@ -106,7 +106,7 @@ export const Route = createFileRoute('/api/register')({
             return Response.json(
               {
                 success: false,
-                statusMessage: 'Registration was received but the confirmation email could not be delivered. Please try again later or contact icaidiet26@gmail.com.',
+                statusMessage: 'Registration was received but the confirmation email could not be delivered. Please try again later or contact icaidietmec@gmail.com.',
               },
               { status: 500 },
             );

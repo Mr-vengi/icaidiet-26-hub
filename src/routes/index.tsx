@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   CalendarDays,
   MapPin,
@@ -28,6 +28,8 @@ import {
 import { useEffect, useState, type CSSProperties } from "react";
 import heroRobot from "@/assets/hero-robot.png";
 import { toast } from "sonner";
+import { Navbar } from "@/components/Navbar";
+import { SubmissionPortalHero } from "@/components/SubmissionPortalHero";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -178,6 +180,12 @@ function Header() {
               href={l.href}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(event) => {
+                if (l.label === "Brochure") {
+                  event.preventDefault();
+                  window.open("/brochure.png", "_blank", "noopener,noreferrer");
+                }
+              }}
               className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
             >
               {l.label}
@@ -217,7 +225,13 @@ function Header() {
               href={l.href}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => setOpen(false)}
+              onClick={(event) => {
+                setOpen(false);
+                if (l.label === "Brochure") {
+                  event.preventDefault();
+                  window.open("/brochure.png", "_blank", "noopener,noreferrer");
+                }
+              }}
               className="flex items-center justify-between border-b border-border py-3 text-sm font-medium text-foreground"
             >
               {l.label}
@@ -239,25 +253,25 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" className="reveal-section hero-grid-bg relative overflow-hidden">
+    <section id="top" className="reveal-section bg-gradient-to-b from-blue-50/50 via-white to-white relative overflow-hidden border-b border-blue-100/60">
       <div className="pointer-events-none absolute -top-32 right-0 h-96 w-96 rounded-full bg-sky/30 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-primary/15 blur-3xl" />
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:py-24">
         <div>
           <div className="flex flex-wrap items-center gap-2">
-            <p className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-accent px-4 py-1.5 text-xs font-semibold tracking-wide text-accent-foreground uppercase">
-              <Globe className="h-3.5 w-3.5" />
+            <p className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-xs font-semibold tracking-wide text-blue-900 uppercase">
+              <Globe className="h-3.5 w-3.5 text-blue-600" />
               Department of Computer Science and Engineering (CSE)
             </p>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-xs font-bold text-navy">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-100/70 px-3 py-1 text-xs font-bold text-blue-950">
               Published Partner: Wiley
             </span>
           </div>
-          <h1 className="mt-6 font-display text-4xl leading-[1.05] font-black tracking-tight text-navy sm:text-5xl lg:text-6xl">
-            International Conference on <span className="gradient-heading">AI-Driven Innovation</span> in
+          <h1 className="mt-6 font-display text-4xl leading-[1.05] font-black tracking-tight text-blue-950 sm:text-5xl lg:text-6xl">
+            International Conference on <span className="text-blue-600">AI-Driven Innovation</span> in
             Engineering &amp; Technology
           </h1>
-          <p className="mt-4 inline-block rounded-lg bg-primary px-4 py-1.5 font-display text-xl font-bold tracking-widest text-primary-foreground">
+          <p className="mt-4 inline-block rounded-lg bg-blue-600 px-4 py-1.5 font-display text-xl font-bold tracking-widest text-white shadow-sm">
             ICAIDIET'26 — CSE
           </p>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -265,16 +279,19 @@ function Hero() {
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <a
-              href="#fees"
-              className="rounded-full bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-transform hover:-translate-y-0.5"
+              href="/register"
+              className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-7 py-3 text-sm font-bold text-white shadow-lg shadow-blue-500/25 transition-transform hover:-translate-y-0.5 hover:bg-blue-700"
             >
-              Register Now
+              Register Now →
             </a>
             <a
-              href="#dates"
-              className="rounded-full border border-primary/30 bg-card px-7 py-3 text-sm font-semibold text-primary transition-colors hover:bg-accent"
+              href="https://www.acadera.co.in/conferences/icaidiet-2026"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-7 py-3 text-sm font-semibold text-blue-700 shadow-xs transition-colors hover:bg-blue-50"
             >
               Submit Your Paper
+              <ExternalLink className="h-3.5 w-3.5" />
             </a>
           </div>
           <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm text-muted-foreground">
@@ -312,13 +329,13 @@ function Highlights() {
     { icon: GraduationCap, title: "Department of CSE", text: "Muthayammal Engineering College (Autonomous)" },
   ];
   return (
-    <section className="reveal-section border-y border-border bg-primary">
+    <section className="reveal-section border-y border-blue-100 bg-blue-600">
       <div className="mx-auto grid max-w-7xl gap-px overflow-hidden px-4 py-10 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
         {items.map((i) => (
-          <div key={i.title} className="flex flex-col items-start gap-2 rounded-xl p-5 text-primary-foreground">
-            <i.icon className="h-7 w-7 text-gold" />
+          <div key={i.title} className="flex flex-col items-start gap-2 rounded-xl p-5 text-white">
+            <i.icon className="h-7 w-7 text-sky-200" />
             <h3 className="font-display text-lg font-bold">{i.title}</h3>
-            <p className="text-sm leading-relaxed text-primary-foreground/80">{i.text}</p>
+            <p className="text-sm leading-relaxed text-blue-100">{i.text}</p>
           </div>
         ))}
       </div>
@@ -436,12 +453,12 @@ function Dates() {
             >
               <span
                 className={`absolute top-1 -left-[9px] h-4 w-4 rounded-full border-2 ${
-                  d.highlight ? "border-gold bg-gold" : "border-primary bg-background"
+                  d.highlight ? "border-blue-600 bg-blue-600" : "border-blue-400 bg-white"
                 }`}
               />
               <p className="text-sm font-medium text-muted-foreground">{d.label}</p>
               <p
-                className={`font-display text-lg font-bold ${d.highlight ? "text-primary" : "text-navy"}`}
+                className={`font-display text-lg font-bold ${d.highlight ? "text-blue-600" : "text-navy"}`}
               >
                 {d.date}
               </p>
@@ -470,7 +487,7 @@ function Committee() {
               style={{ "--reveal-delay": `${gi * 120}ms` } as CSSProperties}
               className="reveal-item rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm"
             >
-              <h3 className="flex items-center gap-2 font-display text-lg font-bold text-gold">
+              <h3 className="flex items-center gap-2 font-display text-lg font-bold text-sky-300">
                 <Users className="h-5 w-5" /> {group.role}
               </h3>
               <ul className="mt-4 space-y-4">
@@ -493,7 +510,7 @@ function Fees() {
   return (
     <section id="fees" className="reveal-section mx-auto max-w-7xl px-4 py-20 sm:px-6">
       <div className="mx-auto max-w-2xl text-center">
-        <p className="text-xs font-bold tracking-[0.2em] text-primary uppercase">Registration & Publication Fees</p>
+        <p className="text-xs font-bold tracking-[0.2em] text-blue-600 uppercase">Registration & Publication Fees</p>
         <h2 className="mt-3 font-display text-3xl font-black tracking-tight text-navy sm:text-4xl">
           Fee Structure & Categories
         </h2>
@@ -501,30 +518,89 @@ function Fees() {
           Published Partner: <span className="font-bold text-navy">Wiley</span>
         </p>
       </div>
-      <div className="card-glow mx-auto mt-12 max-w-4xl overflow-hidden rounded-2xl border border-border bg-card">
+      <div className="card-glow mx-auto mt-12 max-w-4xl overflow-hidden rounded-2xl border border-blue-100 bg-card">
         <table className="w-full text-left text-sm">
           <thead>
-            <tr className="bg-primary text-primary-foreground">
+            <tr className="bg-blue-600 text-white">
               <th className="px-6 py-4 font-display font-bold">Category</th>
               <th className="px-6 py-4 font-display font-bold">Fee / Cost</th>
             </tr>
           </thead>
           <tbody>
             {FEES.map((f) => (
-              <tr key={f.category} className="border-t border-border hover:bg-muted/40 transition-colors">
+              <tr key={f.category} className="border-t border-blue-100 hover:bg-blue-50/50 transition-colors">
                 <td className="px-6 py-4 font-semibold text-navy">{f.category}</td>
-                <td className="px-6 py-4 font-bold text-primary">{f.fee}</td>
+                <td className="px-6 py-4 font-bold text-blue-600">{f.fee}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      <div className="mx-auto mt-6 grid max-w-4xl gap-4 rounded-2xl border border-blue-100 bg-blue-50/60 p-6 sm:grid-cols-2">
+        <div>
+          <p className="text-xs font-bold tracking-[0.16em] text-blue-600 uppercase">Print ISBN</p>
+          <p className="mt-2 font-display text-lg font-bold text-navy">9781836690467</p>
+        </div>
+        <div>
+          <p className="text-xs font-bold tracking-[0.16em] text-blue-600 uppercase">Online ISBN</p>
+          <p className="mt-2 font-display text-lg font-bold text-navy">9781394423415</p>
+        </div>
+      </div>
+
+      {/* Author Resources Callouts */}
+      <div className="mx-auto mt-6 max-w-4xl grid gap-4 sm:grid-cols-3">
+        <a
+          href="https://www.novelcheckr.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 rounded-xl border border-red-200 bg-red-50/80 p-4 transition-all hover:bg-red-100"
+        >
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-red-600 text-white font-bold">
+            ₹99
+          </span>
+          <div>
+            <p className="text-xs font-bold text-red-900">Plagiarism Checker</p>
+            <p className="text-[11px] text-red-700">Check via NovelCheckr before submitting &rarr;</p>
+          </div>
+        </a>
+
+        <a
+          href="https://youtu.be/zy2JHdf3ahs"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 rounded-xl border border-blue-200 bg-blue-50/80 p-4 transition-all hover:bg-blue-100"
+        >
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-600 text-white font-bold">
+            📺
+          </span>
+          <div>
+            <p className="text-xs font-bold text-slate-900">Author Guidelines</p>
+            <p className="text-[11px] text-slate-600">Watch video instructions on YouTube &rarr;</p>
+          </div>
+        </a>
+
+        <a
+          href="https://www.acadera.co.in/conferences/icaidiet-2026"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 rounded-xl border border-blue-100 bg-white p-4 transition-all hover:bg-blue-50"
+        >
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-600 text-white font-bold">
+            🚀
+          </span>
+          <div>
+            <p className="text-xs font-bold text-slate-900">Submission Portal</p>
+            <p className="text-[11px] text-slate-600">Upload paper on Acadera &rarr;</p>
+          </div>
+        </a>
+      </div>
+
       <div className="mt-8 text-center">
         <a
           href="/register"
-          className="inline-flex rounded-full bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-transform hover:-translate-y-0.5"
+          className="inline-flex rounded-full bg-blue-600 px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-500/25 transition-transform hover:-translate-y-0.5 hover:bg-blue-700"
         >
-          Proceed to Registration
+          Proceed to Registration &rarr;
         </a>
       </div>
       <p className="mt-4 text-center text-sm text-muted-foreground">
@@ -578,7 +654,7 @@ function Contact() {
       } else {
         setSubmitStatus({
           type: "error",
-          message: data.statusMessage || "Please directly contact with icaidiet26@gmail.com ",
+          message: data.statusMessage || "Please directly contact with icaidietmec@gmail.com",
         });
         toast.error("Failed to Send", {
           description: data.statusMessage || "Something went wrong.",
@@ -610,17 +686,17 @@ function Contact() {
               Questions about submissions, registration, or the conference program? Our team is happy to help.
             </p>
             <div className="mt-8 space-y-4">
-              <a href="tel:+919442226737" className="flex items-center gap-3 text-navy transition-colors hover:text-primary">
+              <a href="tel:+919842073527" className="flex items-center gap-3 text-navy transition-colors hover:text-primary">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
                   <Phone className="h-4.5 w-4.5" />
                 </span>
-                <span className="font-semibold">+91 94422 26737</span>
+                <span className="font-semibold">+91 9842073527</span>
               </a>
-              <a href="mailto:info@mec.edu.in" className="flex items-center gap-3 text-navy transition-colors hover:text-primary">
+              <a href="mailto:icaidietmec@gmail.com" className="flex items-center gap-3 text-navy transition-colors hover:text-primary">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
                   <Mail className="h-4.5 w-4.5" />
                 </span>
-                <span className="font-semibold">info@mec.edu.in</span>
+                <span className="font-semibold">icaidietmec@gmail.com</span>
               </a>
               <div className="flex items-start gap-3 text-navy">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
@@ -700,7 +776,7 @@ function Contact() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:bg-navy disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full rounded-full bg-blue-600 px-6 py-3.5 text-sm font-bold text-white transition-all hover:bg-blue-700 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-md shadow-blue-500/20"
               >
                 {isLoading && <Loader className="h-4 w-4 animate-spin" />}
                 {isLoading ? "Sending..." : "Send Enquiry"}
@@ -715,27 +791,161 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="bg-navy py-10 text-primary-foreground">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-4 text-center sm:px-6">
-        <p className="font-display text-xl font-bold">
+    <footer className="bg-navy py-12 text-primary-foreground">
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-5 px-4 text-center sm:px-6">
+        <p className="font-display text-2xl font-bold">
           ICAIDIET<span className="text-gold">'26</span>
         </p>
-        <p className="max-w-xl text-sm text-primary-foreground/70">
+        <p className="max-w-xl text-sm text-primary-foreground/75 leading-relaxed">
           International Conference on AI-Driven Innovation in Engineering and Technology — Muthayammal
           Engineering College, in association with Yorkville University, Canada.
         </p>
+        
+        {/* Quick Portal Links */}
+        <div className="flex flex-wrap justify-center items-center gap-x-5 gap-y-2 text-xs text-sky border-y border-white/10 py-3 w-full max-w-2xl">
+          <a
+            href="https://www.acadera.co.in/conferences/icaidiet-2026"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gold transition-colors font-semibold"
+          >
+            1. Acadera Paper Submission Portal
+          </a>
+          <span className="text-white/30">•</span>
+          <a
+            href="https://youtu.be/zy2JHdf3ahs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gold transition-colors font-semibold"
+          >
+            2. Submission Guidelines (Video)
+          </a>
+          <span className="text-white/30">•</span>
+          <a
+            href="https://www.novelcheckr.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gold transition-colors font-semibold text-red-300"
+          >
+            3. NovelCheckr Plagiarism Checker (₹99)
+          </a>
+        </div>
+
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
-          {NAV_LINKS.map((l) => (
-            <a key={l.href} href={l.href} className="text-primary-foreground/70 transition-colors hover:text-gold">
-              {l.label}
-            </a>
-          ))}
+          <Link to="/" className="text-primary-foreground/70 transition-colors hover:text-white">
+            Home
+          </Link>
+          <Link to="/about" className="text-primary-foreground/70 transition-colors hover:text-white">
+            About
+          </Link>
+          <Link to="/call-for-papers" className="text-primary-foreground/70 transition-colors hover:text-white">
+            Call For Papers
+          </Link>
+          <Link to="/guidelines" className="text-primary-foreground/70 transition-colors hover:text-white">
+            Author Guidelines
+          </Link>
+          <Link to="/committees" className="text-primary-foreground/70 transition-colors hover:text-white">
+            Committees
+          </Link>
+          <Link to="/register" className="text-primary-foreground/70 transition-colors hover:text-white">
+            Registration &amp; Fees
+          </Link>
+          <a
+            href="/brochure.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-foreground/70 transition-colors hover:text-white"
+          >
+            Brochure
+          </a>
+          <a
+            href="/Conference_paper_Template.docx"
+            download
+            className="text-primary-foreground/70 transition-colors hover:text-white"
+          >
+            Download Template
+          </a>
         </div>
         <p className="text-xs text-primary-foreground/50">
           © 2026 ICAIDIET'26, Muthayammal Engineering College. All rights reserved.
         </p>
       </div>
     </footer>
+  );
+}
+
+function ConferenceOverviewCards() {
+  const sections = [
+    {
+      title: "About The Conference",
+      desc: "Learn about the mission, organizers, Yorkville University partnership, and hybrid presentation format.",
+      link: "/about",
+      cta: "Explore About",
+      icon: Globe,
+    },
+    {
+      title: "Call For Papers & Tracks",
+      desc: "Eight core conference tracks spanning Generative AI, Robotics, Data Science, Cyber Security, and IoT.",
+      link: "/call-for-papers",
+      cta: "View 8 Tracks",
+      icon: BrainCircuit,
+    },
+    {
+      title: "Organizing Committees",
+      desc: "Meet the Chief Patrons, Principal, Deans, Convenors, and National & International Advisory Board.",
+      link: "/committees",
+      cta: "Meet Committees",
+      icon: Users,
+    },
+    {
+      title: "Registration & Fees",
+      desc: "Check registration categories, publication fee structure, and complete your participant registration.",
+      link: "/register",
+      cta: "Register Now",
+      icon: BadgeCheck,
+    },
+  ];
+
+  return (
+    <section className="reveal-section mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      <div className="text-center max-w-2xl mx-auto mb-12">
+        <p className="text-xs font-bold tracking-[0.2em] text-blue-600 uppercase">
+          Conference Directory
+        </p>
+        <h2 className="mt-2 font-serif text-3xl sm:text-4xl font-bold text-blue-950">
+          Explore ICAIDIET'26
+        </h2>
+        <p className="mt-3 text-slate-600 text-sm sm:text-base">
+          Navigate directly to dedicated conference details, track specifications, and author resources.
+        </p>
+      </div>
+
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {sections.map((sec) => (
+          <Link
+            key={sec.title}
+            to={sec.link}
+            className="group rounded-2xl border border-blue-100 bg-white p-7 shadow-xs hover:shadow-lg hover:border-blue-300 transition-all duration-200 flex flex-col justify-between"
+          >
+            <div>
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors mb-5">
+                <sec.icon className="h-6 w-6" />
+              </span>
+              <h3 className="font-serif text-lg font-bold text-blue-950 group-hover:text-blue-600 transition-colors">
+                {sec.title}
+              </h3>
+              <p className="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                {sec.desc}
+              </p>
+            </div>
+            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-blue-600 group-hover:text-blue-700">
+              <span>{sec.cta}</span>
+              <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -760,15 +970,12 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background font-body">
-      <Header />
+      <Navbar activeSection="home" />
       <main>
         <Hero />
+        <SubmissionPortalHero />
         <Highlights />
-        <About />
-        <Tracks />
-        <Dates />
-        <Committee />
-        <Fees />
+        <ConferenceOverviewCards />
         <Contact />
       </main>
       <Footer />
