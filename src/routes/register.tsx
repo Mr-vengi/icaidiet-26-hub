@@ -520,7 +520,7 @@ function Register() {
               <MapPin className="h-5 w-5 text-blue-600" /> Venue
             </div>
             <p className="mt-2 text-sm font-semibold text-slate-800">Muthayammal Engineering College</p>
-            <p className="text-xs text-slate-500 mt-1">Rasipuram, Namakkal, Tamil Nadu, India</p>
+            <p className="text-xs text-slate-500 mt-1">Muthayammal Engineering College, Rasipuram, Tamil Nadu-637408</p>
           </div>
         </div>
       </section>

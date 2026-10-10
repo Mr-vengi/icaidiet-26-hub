@@ -19,7 +19,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "About ICAIDIET'26 — International Conference on AI-Driven Innovation in Engineering & Technology. Organized by Department of CSE, Muthayammal Engineering College in association with Yorkville University, Canada.",
+          "About ICAIDIET'26 — International Conference on AI-Driven Innovation in Engineering & Technology. Organized by Department of CSE, Muthayammal Engineering College in association with University Canada West, Canada.",
       },
     ],
   }),
@@ -98,7 +98,7 @@ function AboutPage() {
                 Muthayammal Engineering College (Autonomous)
               </p>
               <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                Approved by AICTE, Affiliated to Anna University. Estd. 2000. Rasipuram, Namakkal, Tamil Nadu, India.
+                Approved by AICTE, Affiliated to Anna University. Estd. 2000. Muthayammal Engineering College, Rasipuram, Tamil Nadu-637408.
               </p>
             </div>
 
@@ -106,8 +106,12 @@ function AboutPage() {
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-600 mb-2">
                 <Globe className="h-4 w-4" /> In Association With
               </div>
-              <h3 className="font-serif text-lg font-bold text-blue-950">
-                Yorkville University, Canada
+              <h3 className="inline-flex max-w-full items-center rounded-sm bg-slate-950 px-3 py-2">
+                <img
+                  src="https://wpvip.guscancolleges.ca/ucanwest/wp-content/uploads/sites/3/2022/12/UCW-logo-outline-2x.webp?w=512&quality=85"
+                  alt="University Canada West, Canada"
+                  className="h-auto max-h-12 w-auto max-w-full object-contain"
+                />
               </h3>
               <p className="text-xs text-slate-600 mt-1 leading-relaxed">
                 A globally recognized Canadian university recognized for career-focused education and academic excellence.
@@ -115,14 +119,24 @@ function AboutPage() {
             </div>
 
             <div className="border-t border-slate-100 pt-5">
-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-600 mb-2">
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-600 mb-3">
                 <Award className="h-4 w-4" /> Publishing Partner
               </div>
-              <h3 className="font-serif text-lg font-bold text-blue-950">
-                Wiley &amp; Scopus
-              </h3>
-              <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                All accepted &amp; presented papers published in Scopus-indexed conference proceedings with ISBN &amp; DOI.
+
+              <div className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-4 shadow-sm">
+                <div className="text-center text-[2.3rem] font-black leading-none tracking-[-0.12em] text-slate-950 sm:text-[3rem]">
+                  WILEY
+                </div>
+                <div className="mt-2 flex items-start justify-center">
+                  <div className="text-[2.2rem] font-black leading-none tracking-[-0.08em] text-slate-950 sm:text-[2.7rem]">
+                    Scopus
+                    <span className="align-super text-[0.7rem] font-bold tracking-normal">®</span>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-xs text-slate-600 mt-3 leading-relaxed">
+                All accepted &amp; presented papers published in Scopus-indexed conference book proceedings with ISBN &amp; DOI.
               </p>
             </div>
           </div>

@@ -357,7 +357,7 @@ function About() {
             <p className="mt-2 font-display text-xl font-bold text-primary">Department of Computer Science & Engineering</p>
             <p className="mt-1 text-sm font-semibold text-navy">Muthayammal Engineering College (Autonomous)</p>
             <p className="mt-1 text-xs text-muted-foreground">
-              Approved by AICTE, Affiliated to Anna University. Estd. 2000.
+              Approved by AICTE, Affiliated to Anna University. Estd. 2000. Muthayammal Engineering College, Rasipuram, Tamil Nadu-637408.
             </p>
             <h3 className="mt-5 font-display text-sm font-bold tracking-wide text-navy uppercase">
               In Collaboration With
@@ -703,7 +703,7 @@ function Contact() {
                   <MapPin className="h-4.5 w-4.5" />
                 </span>
                 <span className="font-semibold">
-                  Muthayammal Engineering College, Kakkaveri, Singlandhapuram, Tamil Nadu 637408
+                  Muthayammal Engineering College, Rasipuram, Tamil Nadu-637408
                 </span>
               </div>
             </div>

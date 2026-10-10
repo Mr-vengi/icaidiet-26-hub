@@ -166,7 +166,7 @@ function BrochurePage() {
                   </span>
                   <div>
                     <p className="font-semibold text-slate-900">Host Institution</p>
-                    <p className="text-xs text-slate-600">Muthayammal Engineering College (Autonomous), Rasipuram, Tamil Nadu - 637408</p>
+                    <p className="text-xs text-slate-600">Muthayammal Engineering College, Rasipuram, Tamil Nadu-637408</p>
                   </div>
                 </div>
               </div>
@@ -224,7 +224,7 @@ function BrochurePage() {
                 </p>
                 <p className="flex items-start gap-2">
                   <MapPin className="h-4 w-4 text-blue-600 shrink-0 mt-0.5" />
-                  <span>Muthayammal Engineering College, Rasipuram, Namakkal, Tamil Nadu - 637408</span>
+                  <span>Muthayammal Engineering College, Rasipuram, Tamil Nadu-637408</span>
                 </p>
               </div>
 
